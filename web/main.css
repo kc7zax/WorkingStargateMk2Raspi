@@ -5,7 +5,7 @@ html {
 }
 
 .dial-sequence {
-    width: 1520px;
+    width: 95vw;
     height: 200px;
     padding: 10px;
     border: 2px solid #be4616;
@@ -23,12 +23,12 @@ html {
     }
 
         .dial-sequence .chevron {
-            width: 200px;
+            width: 12vw;
             height: 200px;
             transform: scale(2);
             opacity: 0;
             border: none;
-            margin-right: 10px;
+            margin-right: 1vw;
             cursor: auto;
             position: relative;
             transition-property: transform,opacity;
@@ -44,7 +44,7 @@ html {
 
 
 .chevrons {
-    max-width: 1460px;
+    max-width: 95vw;
     margin: 0 auto;
 }
 

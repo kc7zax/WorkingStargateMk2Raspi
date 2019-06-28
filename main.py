@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from Daemon import Daemon
+from daemon import daemon
 from LightingControl import LightingControl
 from StargateControl import StargateControl
 from DialProgram import DialProgram
@@ -37,6 +37,7 @@ logic = StargateLogic(audio, light_control, stargate_control, dial_program)
 
 # Run this FIRST to get the chevron lighting order
 # light_control.cycle_chevrons()
+# light_control.all_on()
 
 # Run this SECOND to get the best drive method
 # stargate_control.drive_test()

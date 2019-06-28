@@ -77,7 +77,7 @@
 
             function checkDialing() {
                 $.post({
-                    url: 'http://192.168.0.34/dialstatus'
+                    url: `http://${window.location.hostname}/dialstatus`
                 })
                 .done(function(data, status, xhr) {
                     if (xhr.status === 204) {
@@ -97,7 +97,7 @@
                 $('.dial-sequence').addClass('dialing');
 
                 $.post({
-                    url: 'http://192.168.0.34/update',
+                    url: `http://${window.location.hostname}/update`,
                     data: JSON.stringify({
                         anim: 2,
                         sequence: dialSeq
@@ -117,7 +117,7 @@
 
             function shutdown() {
                 $.post({
-                    url: 'http://192.168.0.34/shutdown'
+                    url: `http://${window.location.hostname}/shutdown`
                 });
             }
 
@@ -148,7 +148,7 @@
                 const anim = +$(this).attr('anim');
 
                 $.post({
-                    url: 'http://192.168.0.34/update',
+                    url: `http://${window.location.hostname}/update`,
                     data: JSON.stringify({
                         anim: anim
                     })

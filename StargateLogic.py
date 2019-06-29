@@ -18,18 +18,19 @@ class StargateLogic:
         self.state_changed = True
 
     def execute_command(self, command):
+        self.old_state = self.state
         self.state_changed = True
         self.state = command['anim']
 
         if self.state == 2:
             address = command['sequence']
             if len(address) != 7:
-                self.state = 0
+                self.state = self.old_state
                 return
             self.address = address
 
         if self.state > 3:
-            self.state = 0
+            self.state = self.old_state
 
     def loop(self):
         while True:
@@ -40,7 +41,7 @@ class StargateLogic:
             if self.state == 2:
                 self.light_control.all_off()
                 self.dial_program.dial(self.address)
-                self.state = 0
+                self.state = self.old_state
             elif self.state == 0:
                 delay = self.anim_chase.animate(state_changed)
                 sleep(delay)

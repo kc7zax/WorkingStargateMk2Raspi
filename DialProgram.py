@@ -33,14 +33,15 @@ class DialProgram:
             sleep(config.chevron_engage_time)
             self.audio.play_chevron_unlock()
             sleep(config.audio_delay_time)
-            self.gateControl.unlock_chevron()
+            self.gateControl.unlock_chevron(False if i == 6 else True)
+            if i != 6: self.lightControl.light_chevron(config.chevron_light_order[i])
             while self.audio.is_playing():
                 sleep(0.01)
                 continue
             if i == 6:
                 break
 
-            self.lightControl.light_chevron(config.chevron_light_order[i])
+#            self.lightControl.light_chevron(config.chevron_light_order[i])
 
             if direction == StargateControl.FORWARD:
                 direction = StargateControl.BACKWARD

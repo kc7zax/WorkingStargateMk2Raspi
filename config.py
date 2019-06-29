@@ -66,7 +66,7 @@ cal_percentage = 150
 cal_steps_per_symbol = 15.46153846153846 * 2  # x2 because reasons
 
 # Steps for the top chevron lock
-steps_chevron_lock = 12
+steps_chevron_lock = 20
 
 # Number of steps for a full rotation of the gate
 num_steps_circle = 603

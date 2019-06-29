@@ -21,8 +21,7 @@ from Adafruit_MotorHAT_Motors import Adafruit_MotorHAT
 # was the last LED in the gate, '8'. Then te top '4'. And so on.
 #
 # Once the table is populated, enter the values into the pin array below, following LED order:
-# pins_chevron = [17, 27, 22, 5, 6, 13, 26, 12, 16] # Pin order
-pins_chevron = [26, 12, 16, 13, 27, 6, 22, 5, 17] # Actual order, COMMENT OUT when figuring out the order
+pins_chevron = [17, 27, 22, 5, 6, 13, 26, 12, 16] # Pin order
 
 # Pin for the ramp LED
 pin_gantry = 24
@@ -46,16 +45,16 @@ motor_rpm = 100
 motor_drive = Adafruit_MotorHAT.MICROSTEP
 
 # 'Forward' direction for stargate
-gate_forward = Adafruit_MotorHAT.FORWARD
+gate_forward = Adafruit_MotorHAT.BACKWARD
 
 # 'Backward' direction for stargate
-gate_backward = Adafruit_MotorHAT.BACKWARD
+gate_backward = Adafruit_MotorHAT.FORWARD
 
 # 'Forward' direction for chevron
-chevron_forward = Adafruit_MotorHAT.FORWARD
+chevron_forward = Adafruit_MotorHAT.BACKWARD
 
 # 'Backward' direction for chevron
-chevron_backward = Adafruit_MotorHAT.BACKWARD
+chevron_backward = Adafruit_MotorHAT.FORWARD
 
 # Expected minimum value from LDR when in the home position
 cal_brightness = 800
@@ -67,7 +66,7 @@ cal_percentage = 150
 cal_steps_per_symbol = 15.46153846153846 * 2  # x2 because reasons
 
 # Steps for the top chevron lock
-steps_chevron_lock = 9
+steps_chevron_lock = 20
 
 # Number of steps for a full rotation of the gate
 num_steps_circle = 603

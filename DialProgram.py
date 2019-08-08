@@ -15,6 +15,8 @@ class DialProgram:
         if len(address) != 7:
             raise ValueError('Address length must be 7')
 
+        self.audio.init()
+
         DialProgram.is_dialing = True
         self.lightControl.all_off()
         self.gateControl.move_home()
@@ -60,5 +62,11 @@ class DialProgram:
             continue
 
         self.audio.play_close()
+        while self.audio.is_playing():
+            sleep(0.1)
+        self.audio.quit()
         self.lightControl.all_off()
         DialProgram.is_dialing = False
+        self.lightControl.all_off()
+        self.gateControl.move_home()
+        self.lightControl.all_off()

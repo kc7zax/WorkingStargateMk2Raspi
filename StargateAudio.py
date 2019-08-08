@@ -2,8 +2,11 @@ import pygame
 
 
 class StargateAudio:
-    def __init__(self):
+    def init(self):
         pygame.mixer.init(44100, -16, 2, 2048)
+
+    def quit(self):
+        pygame.mixer.quit()
 
     def is_playing(self):
         return pygame.mixer.music.get_busy()
